@@ -1,0 +1,9 @@
+org/atlanmod/testing/AssertionsTest.class
+org/atlanmod/testing/EqualsVerifierTest$AlwaysDifferentTestData.class
+org/atlanmod/testing/EqualsVerifierTest$AlwaysEqualTestData.class
+org/atlanmod/testing/EqualsVerifierTest$AsymmetricEqualsTestData.class
+org/atlanmod/testing/EqualsVerifierTest.class
+org/atlanmod/testing/Person.class
+org/atlanmod/testing/TestUtility.class
+org/atlanmod/testing/TestDataPerson.class
+org/atlanmod/testing/EqualsVerifierTest$EqualsToNullTestData.class

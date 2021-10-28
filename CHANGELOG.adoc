@@ -1,0 +1,49 @@
+= Atlanmod Commons Change Log
+
+== 1.1.0
+
+* *[ADD]* Int and Long predicates for Preconditions, Assertions, and Guards
+* *[ADD]* String and Object predicates for Preconditions, Assertions, and Guards
+* *[ADD]* New classes `Assertion` and `Preconditions` to properly distinguish Test Assertions from method Preconditions
+* *[UPD]* New class `Guards` for distinguishing method _Guards_ from real pre-condition.
+* *[ADD]* New data structures, `Tree`, `TreeMap` and `Path` for representing trees of values
+* *[UPD]* Require JDK 11
+* *[ADD]* Require Maven 3.6.0
+* *[ADD]* New class, `MutableInt` for representing mutable integers
+* *[UPD]* Caffeine to 3.0.1
+
+== 1.0.5
+
+_Released on 2020-05-09._
+
+* *[ADD]* Add a new module `commons-testing` containing testing facility methods.
+
+== 1.0.4
+
+_Released on 2019-03-21._
+
+* *[UPD]* Use OSGi R6 annotations for Equinox compatibility
+* *[UPD]* Update JUnit tests, and reduce the visibility of all methods (`package-private`)
+* *[ADD]* Add a lazy updater in `Lazy` objects
+* *[ADD]* Add concurrent locks to ensure `Lazy` objects on loaded only once
+* *[FIX]* Fix a type-check in `StandardHashers`
+
+== 1.0.2
+
+_Released on 2019-01-15._
+
+* *[UPD]* Update `groupId` to `org.atlanmod`
+* *[ADD]* Support for unsigned types
+
+== 1.0.1
+
+_Released on 2017-11-22._
+
+* *[UPD]* Update Javadoc and add missing `package-info.java` files
+* *[UPD]* Add message for `Preconditions` uses
+
+== 1.0.0
+
+_Released on 2017-11-20._
+
+First release.

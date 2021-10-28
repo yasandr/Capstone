@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.atlanmod.commons.primitive.IntsTest" time="0.053" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="15"/>
+    <property name="org.slf4j.simpleLogger.levelInBrackets" value="true"/>
+    <property name="org.slf4j.simpleLogger.showLogName" value="false"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/yassine/Desktop/trials/Commons/commons-core/target/test-classes:/home/yassine/Desktop/trials/Commons/commons-core/target/classes:/home/yassine/.m2/repository/org/jetbrains/annotations/20.1.0/annotations-20.1.0.jar:/home/yassine/.m2/repository/com/github/ben-manes/caffeine/caffeine/3.0.4/caffeine-3.0.4.jar:/home/yassine/.m2/repository/org/checkerframework/checker-qual/3.18.0/checker-qual-3.18.0.jar:/home/yassine/.m2/repository/com/google/errorprone/error_prone_annotations/2.9.0/error_prone_annotations-2.9.0.jar:/home/yassine/.m2/repository/net/openhft/zero-allocation-hashing/0.15/zero-allocation-hashing-0.15.jar:/home/yassine/.m2/repository/de/ruedigermoeller/fst/2.57/fst-2.57.jar:/home/yassine/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.8.8/jackson-core-2.8.8.jar:/home/yassine/.m2/repository/org/javassist/javassist/3.21.0-GA/javassist-3.21.0-GA.jar:/home/yassine/.m2/repository/org/objenesis/objenesis/2.5.1/objenesis-2.5.1.jar:/home/yassine/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/yassine/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/yassine/.m2/repository/org/osgi/osgi.core/8.0.0/osgi.core-8.0.0.jar:/home/yassine/.m2/repository/org/osgi/org.osgi.service.component.annotations/1.4.0/org.osgi.service.component.annotations-1.4.0.jar:/home/yassine/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.0/junit-jupiter-api-5.8.0.jar:/home/yassine/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/yassine/.m2/repository/org/junit/platform/junit-platform-commons/1.8.0/junit-platform-commons-1.8.0.jar:/home/yassine/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/yassine/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.0/junit-jupiter-engine-5.8.0.jar:/home/yassine/.m2/repository/org/junit/platform/junit-platform-engine/1.8.0/junit-platform-engine-1.8.0.jar:/home/yassine/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.0/junit-jupiter-params-5.8.0.jar:/home/yassine/.m2/repository/org/mockito/mockito-core/3.12.4/mockito-core-3.12.4.jar:/home/yassine/.m2/repository/net/bytebuddy/byte-buddy/1.11.13/byte-buddy-1.11.13.jar:/home/yassine/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.13/byte-buddy-agent-1.11.13.jar:/home/yassine/.m2/repository/org/assertj/assertj-core/3.21.0/assertj-core-3.21.0.jar:/home/yassine/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="15"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/jdk-15/lib"/>
+    <property name="sun.java.command" value="/home/yassine/Desktop/trials/Commons/commons-core/target/surefire/surefirebooter7521770107268657471.jar /home/yassine/Desktop/trials/Commons/commons-core/target/surefire 2021-10-14T22-28-37_957-jvmRun1 surefire8463888772849269248tmp surefire_011050692889752871678tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/yassine/Desktop/trials/Commons/commons-core/target/test-classes:/home/yassine/Desktop/trials/Commons/commons-core/target/classes:/home/yassine/.m2/repository/org/jetbrains/annotations/20.1.0/annotations-20.1.0.jar:/home/yassine/.m2/repository/com/github/ben-manes/caffeine/caffeine/3.0.4/caffeine-3.0.4.jar:/home/yassine/.m2/repository/org/checkerframework/checker-qual/3.18.0/checker-qual-3.18.0.jar:/home/yassine/.m2/repository/com/google/errorprone/error_prone_annotations/2.9.0/error_prone_annotations-2.9.0.jar:/home/yassine/.m2/repository/net/openhft/zero-allocation-hashing/0.15/zero-allocation-hashing-0.15.jar:/home/yassine/.m2/repository/de/ruedigermoeller/fst/2.57/fst-2.57.jar:/home/yassine/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.8.8/jackson-core-2.8.8.jar:/home/yassine/.m2/repository/org/javassist/javassist/3.21.0-GA/javassist-3.21.0-GA.jar:/home/yassine/.m2/repository/org/objenesis/objenesis/2.5.1/objenesis-2.5.1.jar:/home/yassine/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/home/yassine/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/yassine/.m2/repository/org/osgi/osgi.core/8.0.0/osgi.core-8.0.0.jar:/home/yassine/.m2/repository/org/osgi/org.osgi.service.component.annotations/1.4.0/org.osgi.service.component.annotations-1.4.0.jar:/home/yassine/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.0/junit-jupiter-api-5.8.0.jar:/home/yassine/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/yassine/.m2/repository/org/junit/platform/junit-platform-commons/1.8.0/junit-platform-commons-1.8.0.jar:/home/yassine/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/yassine/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.0/junit-jupiter-engine-5.8.0.jar:/home/yassine/.m2/repository/org/junit/platform/junit-platform-engine/1.8.0/junit-platform-engine-1.8.0.jar:/home/yassine/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.0/junit-jupiter-params-5.8.0.jar:/home/yassine/.m2/repository/org/mockito/mockito-core/3.12.4/mockito-core-3.12.4.jar:/home/yassine/.m2/repository/net/bytebuddy/byte-buddy/1.11.13/byte-buddy-1.11.13.jar:/home/yassine/.m2/repository/net/bytebuddy/byte-buddy-agent/1.11.13/byte-buddy-agent-1.11.13.jar:/home/yassine/.m2/repository/org/assertj/assertj-core/3.21.0/assertj-core-3.21.0.jar:/home/yassine/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/yassine"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2020-09-15"/>
+    <property name="java.home" value="/usr/lib/jvm/jdk-15"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/yassine/Desktop/trials/Commons/commons-core"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/home/yassine/Desktop/trials/Commons/commons-core/target/surefire/surefirebooter7521770107268657471.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="15+36-1562"/>
+    <property name="user.name" value="yassine"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="4.15.0-142-generic"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/yassine/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="15"/>
+    <property name="user.dir" value="/home/yassine/Desktop/trials/Commons/commons-core"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.util.logging.SimpleFormatter.format" value="[%4$s] %5$s%6$s%n"/>
+    <property name="org.slf4j.simpleLogger.showThreadName" value="false"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="15+36-1562"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="59.0"/>
+  </properties>
+  <testcase name="testToBytes" classname="org.atlanmod.commons.primitive.IntsTest" time="0.042">
+    <system-err><![CDATA[[INFO] 
+[INFO] --- Running: testToBytes
+[INFO] --- PASS [0 / 24 MB]
+[INFO] 
+]]></system-err>
+  </testcase>
+</testsuite>

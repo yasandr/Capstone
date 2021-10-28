@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.atlanmod.commons.reflect.MoreReflectionTest
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.481 s - in org.atlanmod.commons.reflect.MoreReflectionTest

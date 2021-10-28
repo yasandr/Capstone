@@ -1,0 +1,21 @@
+= Atlanmod Commons Testing
+
+This module provides a set of classes and methods for helping writing unit and integration tests.
+
+
+== Equals Verifier
+
+[source,java]
+----
+public class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+
+}
+----

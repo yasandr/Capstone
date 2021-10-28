@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress MavenDuplicateDependenciesInspection, MavenDuplicateDependenciesInspection -->
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.atlanmod.commons</groupId>
+    <artifactId>commons</artifactId>
+    <version>1.1.0</version>
+
+    <packaging>pom</packaging>
+
+    <name>Commons</name>
+    <description>The base module for all Atlanmod projects</description>
+
+    <url>https://github.com/atlanmod/Commons</url>
+    <inceptionYear>2017</inceptionYear>
+
+    <organization>
+        <name>Atlanmod</name>
+        <url>https://www.atlanmod.org</url>
+    </organization>
+
+    <scm>
+        <connection>scm:git:https://github.com/atlanmod/Commons.git</connection>
+        <developerConnection>scm:git:https://github.com/atlanmod/Commons.git</developerConnection>
+        <url>https://github.com/atlanmod/Commons</url>
+    </scm>
+
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/atlanmod/Commons/issues</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>travis</system>
+        <url>https://travis-ci.org/atlanmod/Commons</url>
+    </ciManagement>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+    </distributionManagement>
+
+    <licenses>
+        <license>
+            <name>Eclipse Public License v2.0</name>
+            <url>https://www.eclipse.org/legal/epl-2.0/</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <modules>
+        <module>commons-core</module>
+        <module>commons-testing</module>
+    </modules>
+
+    <developers>
+        <developer>
+            <name>Yoann Vernageau</name>
+            <id>yoann.vernageau</id>
+            <email>vernageau@atlanmod.org</email>
+            <roles>
+                <role>admin</role>
+                <role>developer</role>
+            </roles>
+            <timezone>+2</timezone>
+        </developer>
+        <developer>
+            <name>Gerson Sunyé</name>
+            <id>sunye</id>
+            <email>sunye@atlanmod.org</email>
+            <roles>
+                <role>admin</role>
+                <role>developer</role>
+            </roles>
+            <timezone>+2</timezone>
+            <organization>Atlanmod</organization>
+            <organizationUrl>https://www.atlanmod.org/</organizationUrl>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <jdk.version>11</jdk.version>
+        <maven.required.version>3.5.0</maven.required.version>
+        <maven.compiler.source>${jdk.version}</maven.compiler.source>
+        <maven.compiler.target>${jdk.version}</maven.compiler.target>
+
+        <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+
+        <argLine/><!-- Keep it empty -->
+        <argLine.global/>
+
+        <javax-annotations.version>3.0.2</javax-annotations.version>
+
+        <osgi.version>8.0.0</osgi.version>
+        <osgi-annotations.version>1.4.0</osgi-annotations.version><!-- 1.4.0: requires OSGi R7 -->
+
+        <assertj.version>3.21.0</assertj.version>
+        <mockito.version>3.12.4</mockito.version>
+        <junit.version>5.8.0</junit.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>${javax-annotations.version}</version>
+            <scope>provided</scope>
+            <optional>true</optional><!-- needed only for annotations -->
+        </dependency>
+
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- OSGi -->
+
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>osgi.core</artifactId>
+                <version>${osgi.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.service.component.annotations</artifactId>
+                <version>${osgi-annotations.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- Test -->
+
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-params</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>${assertj.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <defaultGoal>package</defaultGoal>
+
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <excludes>
+                    <exclude>**/.empty</exclude>
+                </excludes>
+            </resource>
+        </resources>
+
+        <testResources>
+            <testResource>
+                <directory>${project.basedir}/src/test/resources</directory>
+                <excludes>
+                    <exclude>**/.empty</exclude>
+                </excludes>
+            </testResource>
+        </testResources>
+
+        <plugins>
+
+            <plugin><!-- Generate 'test-jar's beside source 'jar's -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>enforce-java</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireJavaVersion>
+                                    <version>${jdk.version}</version>
+                                </requireJavaVersion>
+                                <requireMavenVersion>
+                                    <version>${maven.required.version}</version>
+                                </requireMavenVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+
+        <pluginManagement>
+            <plugins>
+
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>5.1.1</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <exportScr>true</exportScr>
+                        <instructions>
+                            <Bundle-Version>
+                                1.1.0.${maven.build.timestamp}
+                            </Bundle-Version>
+                            <!--Bundle-Version>
+                                1.0.6
+                            </Bundle-Version-->
+                            <Bundle-ClassPath>.,{maven-dependencies}</Bundle-ClassPath>
+                            <Import-Package/>
+                            <Embed-Dependency>
+                                *;
+                                scope=compile|runtime;
+                                type=!pom;
+                                groupId=!${project.groupId};
+                                inline=true
+                            </Embed-Dependency>
+                            <Embed-Transitive>true</Embed-Transitive>
+                            <Bundle-ActivationPolicy>lazy</Bundle-ActivationPolicy>
+                        </instructions>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                    <configuration>
+                        <compilerArgs>
+                            <!--<arg>-Xlint:all</arg>-->
+                        </compilerArgs>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>3.0.0-M1</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>3.1.2</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>3.0.0-M1</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.8.6</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.2.0</version>
+                    <configuration>
+                        <skipIfEmpty>true</skipIfEmpty>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <!-- `deploy-javadoc` profile comes in addition to this configuration -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>3.2.0</version>
+                    <configuration>
+                        <additionalOptions>-Xdoclint:none</additionalOptions>
+                        <failOnError>false</failOnError>
+                        <quiet>true</quiet>
+                        <notimestamp>true</notimestamp>
+                        <nosince>true</nosince>
+                        <author>false</author>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.2.0</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.2.1</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M5</version>
+                    <configuration>
+                        <!-- Property @{argLine} : created by jacoco:prepare-agent -->
+                        <argLine>@{argLine} ${argLine.global}</argLine>
+                        <failIfNoTests>false</failIfNoTests>
+                        <systemPropertyVariables>
+                            <!-- Set JUL Formatting -->
+                            <java.util.logging.SimpleFormatter.format>[%4$s] %5$s%6$s%n
+                            </java.util.logging.SimpleFormatter.format>
+                        </systemPropertyVariables>
+                    </configuration>
+                </plugin>
+
+                <plugin> <!-- Disable by default -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.9.1</version>
+                    <configuration>
+                        <skip>true</skip>
+                        <skipDeploy>true</skipDeploy>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>2.8.1</version>
+                    <configuration>
+                        <rulesUri>https://www.atlanmod.org/Commons/versions.xml</rulesUri>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>3.0.0-M3</version>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <profiles>
+
+        <!-- A profile to manage Javadoc dependencies (EMF,...) -->
+        <profile>
+            <id>deploy-javadoc</id>
+            <properties>
+                <skipTests>true</skipTests>
+            </properties>
+            <build>
+                <pluginManagement>
+                    <plugins>
+
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <version>3.2.0</version>
+                            <configuration>
+                                <excludePackageNames>
+                                    javax.annotation*;
+                                </excludePackageNames>
+                            </configuration>
+                        </plugin>
+
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+
+        <!-- A profile to deploy artifacts on OSS Sonartype -->
+        <profile>
+            <id>deploy-artifacts</id>
+            <properties>
+                <gpg.executable>gpg</gpg.executable>
+                <skipTests>true</skipTests>
+            </properties>
+            <build>
+                <plugins>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.2.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.2.0</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
+
+</project>

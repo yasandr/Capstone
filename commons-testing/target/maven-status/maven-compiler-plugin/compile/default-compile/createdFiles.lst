@@ -1,0 +1,5 @@
+org/atlanmod/testing/EqualsVerifier.class
+org/atlanmod/testing/Assertions.class
+org/atlanmod/testing/SerializationVerifier.class
+org/atlanmod/testing/Assertions$AssertionContext.class
+org/atlanmod/testing/Verifier.class
