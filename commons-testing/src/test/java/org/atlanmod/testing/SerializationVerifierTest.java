@@ -4,14 +4,22 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-public class SerializationVerifierTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class SerializationVerifierTest {
 
     @Test
-    void test() throws IOException, ClassNotFoundException {
-        Verifier.verifySerializer(Integer.class)
-                .withArguments(11110000)
+    void withArguments() {
+    }
+
+    @Test
+    void check() throws IOException, ClassNotFoundException {
+        new SerializationVerifier(String.class)
+                .withArguments("ibou")
                 .check();
     }
 
-
+    @Test
+    void assertIsEqual() {
+    }
 }

@@ -13,13 +13,12 @@ public class RandomStringGenerator implements Generator<String> {
     private static SecureRandom random = new SecureRandom();
 
     // Pour tester
-    public static void main(String[] args) {
-
+   /* public static void main(String[] args) {
         for (int i = 0; i < 5; i++) {
             System.out.println("resultat : " + generateRandomString(8));
             System.out.println("\n");
         }
-    }
+    }*/
 
     public static String generateRandomString(int length) {
         if (length < 1) throw new IllegalArgumentException();
@@ -32,7 +31,7 @@ public class RandomStringGenerator implements Generator<String> {
             char rndChar = DATA_FOR_RANDOM_STRING.charAt(rndCharAt);
 
             // debug
-            System.out.format("%d\t:\t%c%n", rndCharAt, rndChar);
+            //System.out.format("%d\t:\t%c%n", rndCharAt, rndChar);
             sb.append(rndChar);
 
         }
@@ -41,6 +40,21 @@ public class RandomStringGenerator implements Generator<String> {
 
     @Override
     public String generate() {
-        return " ";
+        int length= random.nextInt(10)+1;
+        return generateRandomString(length);
+    }
+
+    @Override
+    public Class<String>[] types() {
+        Class[] types={String.class};
+        return types;
+    }
+
+    public static void main(String[] args) {
+        int i;
+        RandomStringGenerator ibou=new RandomStringGenerator();
+        for(i=0;i<5;i++) {
+            System.out.println(ibou.generate());
+        }
     }
 }

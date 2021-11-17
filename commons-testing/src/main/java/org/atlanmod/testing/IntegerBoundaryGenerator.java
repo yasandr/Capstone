@@ -22,4 +22,9 @@ public class IntegerBoundaryGenerator implements Generator<Integer>{
     public Integer generate() {
         return this.values[index % values.length];
     }
+
+    @Override
+    public Class<Integer>[] types() {
+        return new Class[0];
+    }
 }

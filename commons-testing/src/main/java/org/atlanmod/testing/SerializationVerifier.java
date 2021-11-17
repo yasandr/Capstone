@@ -1,16 +1,11 @@
 package org.atlanmod.testing;
 
-import java.io.Serializable;
-import java.util.stream.Stream;
 import org.atlanmod.commons.reflect.MoreReflection;
+
 import java.io.*;
-import java.lang.reflect.Field;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.function.Function;
 import java.util.stream.Stream;
-import static org.atlanmod.testing.EqualsVerifier.*;
+
 
 
 public class SerializationVerifier<T extends Serializable> {
@@ -18,8 +13,7 @@ public class SerializationVerifier<T extends Serializable> {
     private Object[] arguments;
     private  static  final  long serialVersionUID = 1623437;
 
-
-    public SerializationVerifier(Class<T> type ){
+    SerializationVerifier(Class<T> type) {
         this.type = type;
     }
 
@@ -28,7 +22,6 @@ public class SerializationVerifier<T extends Serializable> {
         this.arguments = arguments;
         return this;
     }
-
 
     private static Class[] mapToClasses(Object[] objects) {
         return Stream.of(objects)
@@ -43,21 +36,28 @@ public class SerializationVerifier<T extends Serializable> {
         Object object = instantiator.apply(arguments);
 
         // serialiser object
-        String filename =  LocalDateTime.now().toString() + ".atser";
-        File fichier =  new File(filename);
-        ObjectOutputStream oos =  new ObjectOutputStream(new FileOutputStream(fichier));
+        ByteArrayOutputStream boos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(boos);
         oos.writeObject(object);
 
         //deserialiser object
-        ObjectInputStream ois =  new ObjectInputStream(new FileInputStream(filename)) ;
-        Object object2 = (Object)ois.readObject() ;
+        ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(boos.toByteArray()));
+        Object object2 = (Object) ois.readObject();
+
         System.out.println(object2);
 
-        // verifier que l'objet deserialiser contient toute les informations initiales stockÃ© dans la variable object
-        assertIsEqual(object2, object);
+
+        assertIsEqual(object,object2);
+
     }
 
-
-
-
+    public static void assertIsEqual(Object one, Object other) {
+        if (!one.equals(other)) {
+            throw new AssertionError("Expecting objects to be equal");
+        } else if (!other.equals(one)) {
+            throw new AssertionError("Equals is supposed to be symmetric");
+        } else if (one.hashCode() != other.hashCode()) {
+            throw new AssertionError("Equal objects must have the same hash code");
+        }
+    }
 }
