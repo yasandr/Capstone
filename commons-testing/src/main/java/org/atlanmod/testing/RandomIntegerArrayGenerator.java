@@ -12,7 +12,7 @@ public class RandomIntegerArrayGenerator implements Generator {
 
     @Override
     public Class[] types() {
-        Class[] types={Integer[].class,int[].class};
-        return types;
+       // Class[] types={Integer[].class,int[].class};
+        return new Class[0];
     }
 }

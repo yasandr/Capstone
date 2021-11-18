@@ -1,6 +1,4 @@
 package org.atlanmod.testing;
-
-import java.lang.reflect.Constructor;
 import java.util.Random;
 
 public class RandomIntegerGenerator implements Generator<Integer>{
@@ -22,7 +20,7 @@ public class RandomIntegerGenerator implements Generator<Integer>{
 
     @Override
     public Class<Integer>[] types() {
-        Class[] types={Integer.class,int.class,int[].class};
+        Class[] types={Integer.class,int.class};
         return types;
     }
 }
